@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { NavController, Animation, AnimationController, ToastController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/authentication/auth.service';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -67,7 +67,7 @@ export class RegisterPage implements OnInit {
   }
 
   volverPaginaAnterior() {
-    this.navCtrl.navigateForward('main-login/log-register-main');
+    this.navCtrl.navigateForward('main-login/login');
   }
 
   //Aqui hare una validacion para que la contrasennia tenga minimo 6 caracteres

@@ -1,8 +1,4 @@
 <ion-header>
-  <div class="container-Popover" #PopOver>
-
-  </div>
-
   <div class="fixed-profile" (click)="abrirPerfil()" #Perfil>
     <ion-button fill="clear">
       <ion-img [src]="userImage" alt="Tu perfil"></ion-img>
@@ -17,11 +13,11 @@
     <h3>Cargando Datos...</h3>
   </div>
   <ng-container *ngIf="!cargando && vehiculoExistente; else formularioVehiculo">
-    <ion-card class="view-details">
-      <ion-card-header>
-        <ion-card-title>Datos Del Vehiculo</ion-card-title>
-      </ion-card-header>
-      <ion-card-content class="ion-padding">
+    <ion-card class="container-vehiculo">
+
+      <ion-card-title>Datos Del Vehiculo</ion-card-title>
+
+      <ion-card-content>
         <ion-list formGroup="vehicleForm">
 
           <ion-item>
@@ -71,10 +67,8 @@
   </ng-container>
 
   <ng-template #formularioVehiculo>
-    <ion-card class="register-vehicle" *ngIf="!vehiculoExistente">
-      <ion-card-header>
-        <ion-card-title>Registro del Vehículo</ion-card-title>
-      </ion-card-header>
+    <ion-card class="container-vehiculo" *ngIf="!vehiculoExistente">
+      <ion-card-title>Registro del Vehículo</ion-card-title>
       <div class="capture-container">
         <ion-img class="view-photo" [src]="fotoTomada" *ngIf="fotoTomada"></ion-img>
         <ion-icon name="car-sport-outline" class="user-icon" *ngIf="!fotoTomada"
@@ -86,7 +80,7 @@
           <ion-icon name="camera-outline"></ion-icon> Tomar Foto
         </ion-button>
       </div>
-      <ion-card-content class="ion-padding">
+      <ion-card-content>
         <ion-list formGroup="vehicleForm">
           <ion-item>
             <ion-input type="text" id="nombreDuenio" [value]="vehiculoExistente?.nombre"

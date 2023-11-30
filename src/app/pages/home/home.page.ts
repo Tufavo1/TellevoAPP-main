@@ -20,18 +20,21 @@ export class HomePage implements OnInit {
   async ngOnInit(): Promise<void> {
     this.slides = [
       {
-        description: 'Descubre el mundo a través de TellevoApp, Tu compañero de viaje en la palma de tu mano.'
+        banner: 'assets/img/fondos-banner/experiencia-programacion-persona-que-trabaja-codigos-computadora-730x730.jpg',
+        description: 'En Duoc UC le abrimos las puertas a la tecnología e innovación con los fondos de Desarrollo Experimental'
       },
       {
-        description: 'Viaja con confianza, viaja con TellevoApp. ¡Tu aventura comienza aquí!'
+        banner: 'assets/img/fondos-banner/DSC_9633-min-730x730.jpg',
+        description: 'Mujeres líderes de la industria brindaron charlas magistrales en la primera edición de Security Woman'
       },
       {
-        description: 'Encuentra tu próximo destino de ensueño con TellevoApp. ¡Explora, reserva, y viaja!'
+        banner: 'assets/img/fondos-banner/MicrosoftTeams-image-21-730x730.jpg',
+        description: 'La copa de los Juegos Olímpicos Duoc UC 2023 se queda nuevamente en sede Maipú'
       },
     ];
   }
 
   moveButton() {
-    this.router.navigateByUrl('main-login/log-register-main')
+    this.router.navigateByUrl('main-login/login')
   }
 }

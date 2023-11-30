@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap, filter, take } from 'rxjs/operators';
-import { AuthService } from 'src/app/services/authentication/auth.service';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
 
 @Injectable({
   providedIn: 'root'

@@ -17,10 +17,6 @@ const routes: Routes = [
     path: 'main-login',
     children: [
       {
-        path: 'log-register-main',
-        loadChildren: () => import('./pages/main-login/log-register-main/log-register-main.module').then(m => m.LogRegisterMainPageModule)
-      },
-      {
         path: 'forgotpass',
         loadChildren: () => import('./pages/main-login/forgotpass/forgotpass.module').then(m => m.ForgotpassPageModule)
       },

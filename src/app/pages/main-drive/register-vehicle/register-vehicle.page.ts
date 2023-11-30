@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { AlertController, AnimationController, NavController, PopoverController, ToastController } from '@ionic/angular';
-import { FirestoreService } from 'src/app/services/firebase/store/firestore.service';
-import { AuthService } from 'src/app/services/authentication/auth.service';
-import { Router } from '@angular/router';
+import { AlertController, AnimationController, NavController, ToastController } from '@ionic/angular';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore/firestore.service';
 
 @Component({
   selector: 'app-register-vehicle',
@@ -29,11 +28,9 @@ export class RegisterVehiclePage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    private popoverController: PopoverController,
     private firestoreService: FirestoreService,
     private authService: AuthService,
     private toastController: ToastController,
-    private router: Router,
     private alertController: AlertController,
     private animationCtrl: AnimationController
 

@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavController, Animation, AnimationController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/authentication/auth.service';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
 
 @Component({
   selector: 'app-forgotpass',

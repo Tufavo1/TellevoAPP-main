@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth'
 import { Observable } from 'rxjs';
 import { ToastController } from '@ionic/angular';
-import { FirestoreService } from '../firebase/store/firestore.service';
+import { FirestoreService } from '../firestore/firestore.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +15,6 @@ export class AuthService {
     private router: Router,
     private toastController: ToastController,
     private firestoreService: FirestoreService,
-
   ) { }
 
   async registrarUsuarioConInfo(email: string, password: string, userData: any): Promise<any> {

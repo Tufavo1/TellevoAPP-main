@@ -1,7 +1,7 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavController, Animation, AnimationController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/authentication/auth.service';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -122,6 +122,6 @@ export class LoginPage implements OnInit {
   }
 
   volverPaginaAnterior() {
-    this.navCtrl.navigateForward('main-login/log-register-main');
+    this.navCtrl.navigateForward('main-login/home');
   }
 }

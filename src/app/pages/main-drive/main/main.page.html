@@ -1,10 +1,4 @@
 <ion-header>
-  <div class="container-Popover" #PopOver>
-    <ion-button (click)="abrirMenu()">
-      <ion-icon name="menu"></ion-icon>
-    </ion-button>
-  </div>
-
   <div class="fixed-profile" (click)="abrirPerfil()" #ImgPreview>
     <ion-button fill="clear">
       <ion-img [src]="userImage" alt="Tu perfil"></ion-img>
@@ -12,7 +6,7 @@
   </div>
 </ion-header>
 
-<ion-content #Content>
+<ion-content class="fullscreen-bg" #Content>
   <div class="background-image"></div>
   <div class="container-geolocalizacion">
     <div class="localizacion">
@@ -37,23 +31,23 @@
 
   <div class="btn-container">
     <ion-button class="btn-menu" (click)="buscarViaje()">
-      Buscar Vehiculo de Acercamiento </ion-button><ion-icon name="search-outline"></ion-icon>
+      Buscar Vehiculo de Acercamiento <ion-icon name="search-outline"></ion-icon> </ion-button>
   </div>
 
   <app-slide [slides]="slides"></app-slide>
 
   <div class="container-nosotros">
-    <ion-header>
-      <ion-title>Quiénes Somos</ion-title>
-    </ion-header>
-    <ion-card>
+
+    <ion-card class="contenido-nosotros">
       <ion-card-content>
+        <ion-title>Quiénes Somos?</ion-title>
         <p>
           Somos un equipo apasionado dedicado a proporcionar soluciones de
           transporte eficientes y seguras para nuestros usuarios. Nuestra misión
           es facilitar la movilidad de las personas y contribuir a la
           construcción de comunidades conectadas.
         </p>
+        <h3>© 2023 Jose Romero. Todos los derechos reservados.</h3>
       </ion-card-content>
     </ion-card>
   </div>

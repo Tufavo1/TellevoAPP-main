@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, AnimationController, IonicModule, MenuController, NavController, PopoverController } from '@ionic/angular';
+import { AlertController, AnimationController, IonicModule, MenuController, NavController } from '@ionic/angular';
 import { DataService } from 'src/app/services/shared-data/data.service';
 import { Geolocation } from '@capacitor/geolocation';
-import { AuthService } from 'src/app/services/authentication/auth.service';
 import { SlideComponent } from '../../component/slide/slide.component';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
 
 @Component({
   selector: 'app-main',

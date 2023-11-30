@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
-import { AlertController, AnimationController, NavController, PopoverController, ToastController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/authentication/auth.service';
-import { FirestoreService } from 'src/app/services/firebase/store/firestore.service';
+import { AlertController, AnimationController, NavController, ToastController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore/firestore.service';
 
 @Component({
   selector: 'app-profile',
@@ -28,7 +28,6 @@ export class ProfilePage implements OnInit {
     private toastController: ToastController,
     private authService: AuthService,
     private alertController: AlertController,
-    private popoverController: PopoverController,
     private firestoreService: FirestoreService,
     private afAuth: AngularFireAuth,
     private animationCtrl: AnimationController

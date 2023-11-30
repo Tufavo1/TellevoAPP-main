@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, AnimationController, NavController } from '@ionic/angular';
-import { FirestoreService } from 'src/app/services/firebase/store/firestore.service';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/authentication/auth.service';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore/firestore.service';
 
 @Component({
   selector: 'app-viajar',

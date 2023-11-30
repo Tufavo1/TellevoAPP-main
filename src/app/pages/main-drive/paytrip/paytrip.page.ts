@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, AnimationController, NavController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/authentication/auth.service';
-import { FirestoreService } from 'src/app/services/firebase/store/firestore.service';
+import { AuthService } from 'src/app/services/firebase/authentication/auth.service';
+import { FirestoreService } from 'src/app/services/firebase/firestore/firestore.service';
 
 @Component({
   selector: 'app-paytrip',
