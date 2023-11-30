@@ -16,9 +16,8 @@
     <ng-container *ngIf="loaded; else loadingContent">
       <ion-list>
         <h1 class="title">Selecciona un vehiculo, paga y disfruta de un buen Viaje.</h1>
-        <ion-item class="container-btn" *ngFor="let vehiculo of vehiculosRegistrados">
-          <ion-button class="btn-item" expand="full" *ngIf="matchDestination(vehiculo.destino)"
-            (click)="realizarPago(vehiculo)">
+        <ion-item *ngFor="let vehiculo of vehiculosRegistrados">
+          <ion-button class="btn-item" *ngIf="matchDestination(vehiculo.destino)" (click)="realizarPago(vehiculo)">
             <ion-icon name="car-outline"></ion-icon>
             <ion-label>
               <h2>{{ vehiculo.modelo }}</h2>

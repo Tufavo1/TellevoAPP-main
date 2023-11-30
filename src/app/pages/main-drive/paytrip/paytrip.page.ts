@@ -251,4 +251,5 @@ export class PaytripPage implements OnInit {
     // Asigna el número formateado de nuevo al modelo
     this.cardNumber = formatted;
   }
+
 }
