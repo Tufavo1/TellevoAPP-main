@@ -13,7 +13,6 @@ export class RegisterPage implements OnInit {
   @ViewChild('main', { static: false }) main!: ElementRef;
   @ViewChild('section', { static: false }) section!: ElementRef;
 
-  fotoTomada: string | undefined;
   names: string = '';
   direccion: string = '';
   numero: string = '';
@@ -124,9 +123,6 @@ export class RegisterPage implements OnInit {
     } else if (!this.validarPassword(this.password)) {
       mensajeError = 'La contraseña debe tener al menos 6 caracteres, 1 mayúscula, 2 números y 1 carácter especial. ';
     }
-    if (!this.fotoTomada) {
-      camposFaltantes += 'Foto, ';
-    }
 
     // Se encuentran dentro de estos campos algunos vacios,
     //muestre un mensaje solo los que falten como guia
@@ -187,7 +183,6 @@ export class RegisterPage implements OnInit {
     // Y que este registre al usuario en el Firebase y guarde información adicional en el localStorage
     this.authService
       .registrarUsuarioConInfo(this.email, this.password, {
-        fotoTomada: this.fotoTomada,
         names: this.names,
         direccion: this.direccion,
         numero: this.numero,
@@ -203,33 +198,6 @@ export class RegisterPage implements OnInit {
         console.error('Error al registrar: ', error);
         // Aqui manejare los error de registro mas adelante
       });
-  }
-
-  async tomarFoto() {
-    try {
-      // el usuario tomara una foto
-      const image = await Camera.getPhoto({
-        //esta tendra una calidad
-        quality: 90,
-        //Esta no permitira editar
-        allowEditing: false,
-        //Esto dara como resultado: URL de datos
-        resultType: CameraResultType.DataUrl,
-        // la fuente sera la camara o archivos
-        source: CameraSource.Camera,
-      });
-
-      // Aqui asigno que la imagen tomada se guarde a la propiedad fotoTomada
-      this.fotoTomada = image.dataUrl;
-    } catch (error) {
-      //Pero en caso de error que muestre el error en la consola mas adelante manejare mejor el error
-      console.error('Error al tomar la foto: ', error);
-    }
-  }
-
-  borrarFoto() {
-    // Este de aqui borrara la imagen tomada 
-    this.fotoTomada = '';
   }
 
   IrAllogin() {

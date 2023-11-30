@@ -18,7 +18,6 @@ export class PaytripPage implements OnInit {
   expYear: string = '';
   cvc: string = '';
   vehiculoSeleccionado: any;
-  userImage!: string;
 
   constructor(
     private firestoreService: FirestoreService,
@@ -31,8 +30,6 @@ export class PaytripPage implements OnInit {
     private animationCtrl: AnimationController
 
   ) {
-    this.cargarImagenUsuario();
-
     this.route.queryParams.subscribe(params => {
       const extras = this.router.getCurrentNavigation()?.extras;
       if (extras && 'state' in extras && extras.state) {
@@ -176,16 +173,7 @@ export class PaytripPage implements OnInit {
     this.realizarAnimacionSalida();
   }
 
-  cargarImagenUsuario() {
-    const userData = localStorage.getItem('registeredUser');
-    if (userData) {
-      const user = JSON.parse(userData);
-      this.userImage = user.fotoTomada;
-    }
-  }
-
   abrirPerfil() {
-    this.cargarImagenUsuario();
     this.navCtrl.navigateForward('main-drive/profile')
     this.realizarAnimacionSalida();
   }

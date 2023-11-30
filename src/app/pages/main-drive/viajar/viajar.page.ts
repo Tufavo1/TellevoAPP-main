@@ -11,7 +11,6 @@ import { FirestoreService } from 'src/app/services/firebase/firestore/firestore.
 })
 export class ViajarPage implements OnInit {
   vehiculosRegistrados: any[] = [];
-  userImage!: string;
   loaded = false;
   skeletonData: any[] = [];
   searchTerm: string = '';
@@ -24,9 +23,7 @@ export class ViajarPage implements OnInit {
     private alertController: AlertController,
     private animationCtrl: AnimationController
 
-  ) {
-    this.cargarImagenUsuario();
-  }
+  ) { }
 
   onSearchChange(event: any) {
     this.searchTerm = event.detail.value || '';
@@ -76,17 +73,8 @@ export class ViajarPage implements OnInit {
   }
 
   abrirPerfil() {
-    this.cargarImagenUsuario();
     this.navCtrl.navigateForward('main-drive/profile')
     this.realizarAnimacionSalida();
-  }
-
-  cargarImagenUsuario() {
-    const userData = localStorage.getItem('registeredUser');
-    if (userData) {
-      const user = JSON.parse(userData);
-      this.userImage = user.fotoTomada;
-    }
   }
 
   ngOnInit() {

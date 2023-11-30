@@ -28,7 +28,6 @@ export class AuthService {
 
         // Almacenar los datos del usuario en localStorage
         const registeredUser = {
-          fotoTomada: userData.fotoTomada,
           names: userData.names,
           direccion: userData.direccion,
           fechaNacimiento: userData.fechaNacimiento,
@@ -143,7 +142,7 @@ export class AuthService {
       .then(() => {
         // aqui eliminare cada localstorage para que en caso de inicio de sesion no obtenga los datos asociados a otra cuenta
         // Limpiar el localStorage
-        const itemsToRemove = ['loggedUser', 'registeredUser', 'vehiculoExistente', 'HistorialCompras'];
+        const itemsToRemove = ['loggedUser', 'registeredUser', 'vehiculoExistente', 'HistorialCompras, resumenCompra, userData'];
         itemsToRemove.forEach(item => localStorage.removeItem(item));
 
         // al cerrar sesuib que rediriga al usuario a la página de inicio de sesión

@@ -13,13 +13,6 @@
 <ion-content class="fullscreen-bg" #Content>
     <div class="background-image"></div>
     <ion-card class="container-card">
-        <ion-title>Foto De Perfil<ion-icon name="person-sharp"></ion-icon></ion-title>
-        <div class="capture-container">
-            <ion-img class="view-photo" [src]="userData.fotoTomada" alt="Foto del usuario"></ion-img>
-            <ion-button class="btn-editar" expand="full" (click)="cambiarImagen()">
-                Cambiar Imagen <ion-icon name="camera-outline"></ion-icon>
-            </ion-button>
-        </div>
         <ion-card-content class="contenido-card">
             <ion-card-title>Datos Personales<ion-icon name="person-sharp"></ion-icon></ion-card-title>
             <ion-list>

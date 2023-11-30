@@ -12,7 +12,6 @@ import { FirestoreService } from 'src/app/services/firebase/firestore/firestore.
 })
 export class ProfilePage implements OnInit {
   userData: any = {
-    fotoTomada: '',
     email: '',
     numero: '',
   }
@@ -133,27 +132,6 @@ export class ProfilePage implements OnInit {
   mostrarHistorial() {
     this.navCtrl.navigateForward('main-drive/history-drive')
     this.realizarAnimacionSalida();
-  }
-
-  cambiarImagen() {
-    this.tomarFoto().then(() => {
-      localStorage.setItem('registeredUser', JSON.stringify(this.userData));
-    });
-  }
-
-  async tomarFoto() {
-    try {
-      const image = await Camera.getPhoto({
-        quality: 90,
-        allowEditing: false,
-        resultType: CameraResultType.DataUrl,
-        source: CameraSource.Camera,
-      });
-
-      this.userData.fotoTomada = image.dataUrl;
-    } catch (error) {
-      console.error('Error al tomar la foto: ', error);
-    }
   }
 
   async mostrarMensajeError(mensaje: string) {

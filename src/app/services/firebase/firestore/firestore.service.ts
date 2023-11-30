@@ -15,12 +15,9 @@ export class FirestoreService {
   ) { }
 
   async guardarDatosUsuarioFirestore(email: string, userData: any) {
-    // Referencia a la colección de usuarios en Firestore
     const usersCollection = collection(this.firestore, 'usuarios');
 
-    // Datos del usuario a guardar
     const usuario = {
-      fotoTomada: userData.fotoTomada,
       names: userData.names,
       direccion: userData.direccion,
       fechaNacimiento: userData.fechaNacimiento,
@@ -29,7 +26,6 @@ export class FirestoreService {
     };
 
     try {
-      // Agregar los datos del usuario a Firestore
       await addDoc(usersCollection, usuario);
       console.log('Datos del usuario guardados en Firestore con éxito.');
     } catch (error) {

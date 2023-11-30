@@ -13,17 +13,6 @@
     <ion-card-subtitle class="ion-text-lowercase">Disfruta Y vive de las mejores
       experiencias</ion-card-subtitle>
 
-    <div class="capture-container">
-      <ion-img class="view-photo" [src]="fotoTomada" *ngIf="fotoTomada"></ion-img>
-      <ion-icon name="person-circle" class="user-icon" *ngIf="!fotoTomada" ng-reflect-name="person-circle"></ion-icon>
-      <ion-button class="btn-deletephoto" (click)="borrarFoto()" color="danger" *ngIf="fotoTomada">
-        <ion-icon name="trash-outline"></ion-icon>
-      </ion-button>
-      <ion-button class="btn-takephoto" (click)="tomarFoto()" *ngIf="!fotoTomada">
-        <ion-icon name="camera-outline" slot="end"></ion-icon> Tomar Foto
-      </ion-button>
-    </div>
-
     <ion-card-content class="card-content" #section>
       <ion-item>
         <ion-input [(ngModel)]="names" type="text" placeholder="Nombre Completo"

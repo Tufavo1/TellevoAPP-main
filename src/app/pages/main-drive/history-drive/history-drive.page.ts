@@ -13,7 +13,6 @@ import { FirestoreService } from 'src/app/services/firebase/firestore/firestore.
 export class HistoryDrivePage implements OnInit {
 
   historialCompras: any[] = [];
-  userImage!: string;
   isLoading: boolean = false;
 
   constructor(
@@ -23,10 +22,7 @@ export class HistoryDrivePage implements OnInit {
     private alertController: AlertController,
     private authService: AuthService,
     private animationCtrl: AnimationController
-  ) {
-    this.cargarImagenUsuario();
-
-  }
+  ) { }
 
   ionViewDidEnter() {
     this.realizarAnimacionEntrada();
@@ -65,16 +61,7 @@ export class HistoryDrivePage implements OnInit {
     this.obtenerHistorialDesdeFirestore();
   }
 
-  cargarImagenUsuario() {
-    const userData = localStorage.getItem('registeredUser');
-    if (userData) {
-      const user = JSON.parse(userData);
-      this.userImage = user.fotoTomada;
-    }
-  }
-
   abrirPerfil() {
-    this.cargarImagenUsuario();
     this.navCtrl.navigateForward('main-drive/profile')
     this.realizarAnimacionSalida();
   }

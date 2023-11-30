@@ -14,7 +14,6 @@ import { AuthService } from 'src/app/services/firebase/authentication/auth.servi
 })
 
 export class MainPage implements OnInit {
-  userImage!: string;
   userData: any = {};
   slides: any[] = [];
 
@@ -34,7 +33,6 @@ export class MainPage implements OnInit {
     private animationCtrl: AnimationController,
     private menuController: MenuController
   ) {
-    this.cargarImagenUsuario();
   }
 
   abrirMenu() {
@@ -104,17 +102,8 @@ export class MainPage implements OnInit {
   }
 
   abrirPerfil() {
-    this.cargarImagenUsuario();
     this.navCtrl.navigateForward('main-drive/profile')
     this.realizarAnimacionSalida();
-  }
-
-  cargarImagenUsuario() {
-    const userData = localStorage.getItem('registeredUser');
-    if (userData) {
-      const user = JSON.parse(userData);
-      this.userImage = user.fotoTomada;
-    }
   }
 
   mostrarHistorial() {
